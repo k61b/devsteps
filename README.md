@@ -1,38 +1,21 @@
-# sv
+# DevSteps
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+DevSteps is a fast, free learning platform that bundles written courses produced entirely by the community. Each module is authored or reviewed by practitioners, helping learners gain the skills they need without barriers.
 
-## Creating a project
+## Why DevSteps?
+- Fast: Jump straight into the topic you want to learn.
+- Free: All content is open and accessible at any time.
+- Community-led: Lessons are created and curated by developers who use these skills daily.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting Started
+1. Install dependencies with `npm install`.
+2. Launch the development server with `npm run dev -- --open`.
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Contributing
+- Follow the guidelines in `CONTRIBUTING.md` to add new lessons or improve existing ones.
+- Share issues for bugs or learning ideas so the community can act on them.
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Roadmap Highlights
+- Organize modules by category for easier discovery.
+- Add a community voting flow to validate new submissions.
+- Ship learner profiles to track personal progress.
