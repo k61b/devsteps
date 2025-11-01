@@ -1,0 +1,261 @@
+{
+  "id": "react-30day",
+  "title": "React Deep Dive",
+  "description": "Master React from basics to advanced concepts in 30 days",
+  "longDescription": "This comprehensive React course takes you from beginner to advanced level through carefully crafted written lessons. Learn React hooks, state management, routing, and build production-ready applications. All content is community-driven and completely free. Perfect for developers who want to become React experts.",
+  "language": "en",
+  "duration": 30,
+  "level": "Intermediate",
+  "estimatedHours": 45,
+  "lastUpdated": "2025-11-01",
+  "color": "purple",
+  "contributors": [
+    {
+      "name": "Alex Rodriguez",
+      "title": "Community Lead",
+      "bio": "React enthusiast sharing knowledge through detailed written tutorials and examples.",
+      "avatar": "👨‍🎓"
+    },
+    {
+      "name": "Emma Watson",
+      "title": "Content Contributor",
+      "bio": "Frontend developer passionate about making React accessible to everyone.",
+      "avatar": "👩‍🔬"
+    }
+  ],
+  "community": {
+    "contributorsCount": 28,
+    "githubRepo": "https://github.com/devsteps/react-deep-dive"
+  },
+  "whatYouWillLearn": [
+    "React fundamentals and component architecture",
+    "Modern React hooks (useState, useEffect, useContext, etc.)",
+    "State management with Redux and Context API",
+    "React Router for navigation",
+    "Performance optimization techniques",
+    "Testing React applications",
+    "Building production-ready apps",
+    "Best practices and design patterns"
+  ],
+  "requirements": [
+    "Good knowledge of JavaScript (ES6+)",
+    "Understanding of HTML and CSS",
+    "Basic understanding of npm/yarn",
+    "Familiarity with command line"
+  ],
+  "targetAudience": [
+    "JavaScript developers wanting to learn React",
+    "Frontend developers looking to upgrade skills",
+    "Developers switching from other frameworks",
+    "Anyone building modern web applications"
+  ],
+  "curriculum": [
+    {
+      "day": 1,
+      "title": "React Fundamentals",
+      "duration": "1.5 hours",
+      "lessons": [
+        {
+          "title": "What is React and Why Use It?",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Understanding React's philosophy and ecosystem",
+          "slug": "what-is-react"
+        },
+        {
+          "title": "Setting Up React Development Environment",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Create React App and modern tooling",
+          "slug": "setup-environment"
+        },
+        {
+          "title": "JSX Fundamentals",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Understanding JSX syntax and rules",
+          "slug": "jsx-fundamentals"
+        },
+        {
+          "title": "Your First Component",
+          "duration": "15 min",
+          "type": "exercise",
+          "description": "Create your first React component",
+          "slug": "first-component"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Components and Props",
+      "duration": "1.5 hours",
+      "lessons": [
+        {
+          "title": "Functional vs Class Components",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Understanding different component types",
+          "slug": "component-types"
+        },
+        {
+          "title": "Props and Component Communication",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Passing data between components",
+          "slug": "props-communication"
+        },
+        {
+          "title": "Component Composition",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Building complex UIs with simple components",
+          "slug": "component-composition"
+        },
+        {
+          "title": "Props Exercise",
+          "duration": "15 min",
+          "type": "exercise",
+          "description": "Practice with props and composition",
+          "slug": "props-exercise"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "State Management Basics",
+      "duration": "1.5 hours",
+      "lessons": [
+        {
+          "title": "Introduction to State",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "What is state and why we need it",
+          "slug": "intro-to-state"
+        },
+        {
+          "title": "useState Hook",
+          "duration": "35 min",
+          "type": "reading",
+          "description": "Managing component state with hooks",
+          "slug": "usestate-hook"
+        },
+        {
+          "title": "Event Handling in React",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Handling user interactions",
+          "slug": "event-handling"
+        },
+        {
+          "title": "Interactive Counter App",
+          "duration": "15 min",
+          "type": "project",
+          "description": "Build a simple counter with state",
+          "slug": "counter-app"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Lists and Conditional Rendering",
+      "duration": "1.5 hours",
+      "lessons": [
+        {
+          "title": "Rendering Lists",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Using map() to render dynamic lists",
+          "slug": "rendering-lists"
+        },
+        {
+          "title": "Keys in React",
+          "duration": "15 min",
+          "type": "reading",
+          "description": "Understanding the importance of keys",
+          "slug": "react-keys"
+        },
+        {
+          "title": "Conditional Rendering Techniques",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Different ways to conditionally render components",
+          "slug": "conditional-rendering"
+        },
+        {
+          "title": "Todo List Project",
+          "duration": "20 min",
+          "type": "project",
+          "description": "Build a basic todo list application",
+          "slug": "todo-list-project"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Forms and User Input",
+      "duration": "1.5 hours",
+      "lessons": [
+        {
+          "title": "Controlled Components",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Managing form state in React",
+          "slug": "controlled-components"
+        },
+        {
+          "title": "Handling Multiple Inputs",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Working with complex forms",
+          "slug": "multiple-inputs"
+        },
+        {
+          "title": "Form Validation",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Validating user input",
+          "slug": "form-validation"
+        },
+        {
+          "title": "Registration Form Project",
+          "duration": "15 min",
+          "type": "project",
+          "description": "Create a user registration form",
+          "slug": "registration-form"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "icon": "📖",
+      "title": "45+ Hours of Content",
+      "description": "Comprehensive written lessons covering all topics"
+    },
+    {
+      "icon": "🚀",
+      "title": "Real-world Projects",
+      "description": "Build 5+ production-ready applications"
+    },
+    {
+      "icon": "📚",
+      "title": "MDX Format",
+      "description": "Interactive code examples within lessons"
+    },
+    {
+      "icon": "🌍",
+      "title": "Community Driven",
+      "description": "Created by React developers for developers"
+    },
+    {
+      "icon": "💯",
+      "title": "Always Free",
+      "description": "No paywalls, no subscriptions"
+    },
+    {
+      "icon": "⚡",
+      "title": "Latest React 18",
+      "description": "Learn the newest React features"
+    }
+  ]
+}

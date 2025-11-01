@@ -1,0 +1,380 @@
+{
+  "id": "js-7day",
+  "title": "JavaScript Fundamentals",
+  "description": "Learn JavaScript basics with hands-on projects in 7 days. This comprehensive course will take you from zero to hero in JavaScript programming.",
+  "longDescription": "This course is designed for complete beginners who want to learn JavaScript from scratch. All content is written by the community and completely free. You'll learn all the fundamental concepts of JavaScript including variables, data types, functions, loops, and much more through carefully crafted written lessons and exercises.",
+  "language": "en",
+  "duration": 7,
+  "level": "Beginner",
+  "estimatedHours": 14,
+  "lastUpdated": "2025-11-01",
+  "color": "pink",
+  "contributors": [
+    {
+      "name": "Sarah Johnson",
+      "title": "Community Contributor",
+      "bio": "Passionate developer who loves creating educational content for beginners.",
+      "avatar": "👩‍💻"
+    },
+    {
+      "name": "Michael Chen",
+      "title": "Content Maintainer",
+      "bio": "Helping developers learn through clear, concise written tutorials.",
+      "avatar": "👨‍💻"
+    }
+  ],
+  "community": {
+    "contributorsCount": 12,
+    "githubRepo": "https://github.com/devsteps/js-fundamentals"
+  },
+  "whatYouWillLearn": [
+    "Understanding JavaScript syntax and basic concepts",
+    "Working with variables, data types, and operators",
+    "Control flow: if statements, loops, and switch cases",
+    "Functions: declarations, expressions, and arrow functions",
+    "Arrays and objects manipulation",
+    "DOM manipulation and event handling",
+    "ES6+ modern JavaScript features",
+    "Building interactive web applications"
+  ],
+  "requirements": [
+    "Basic understanding of HTML and CSS",
+    "A computer with a modern web browser",
+    "Text editor or IDE installed",
+    "Enthusiasm to learn!"
+  ],
+  "targetAudience": [
+    "Beginners who want to learn JavaScript",
+    "Web designers looking to add interactivity",
+    "Anyone interested in web development",
+    "Students preparing for frontend roles"
+  ],
+  "curriculum": [
+    {
+      "day": 1,
+      "title": "Introduction to JavaScript",
+      "duration": "2 hours",
+      "lessons": [
+        {
+          "title": "What is JavaScript?",
+          "duration": "15 min",
+          "type": "reading",
+          "description": "Understanding what JavaScript is and why it's important for web development",
+          "slug": "what-is-javascript"
+        },
+        {
+          "title": "Setting Up Your Environment",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Installing necessary tools and setting up your development environment",
+          "slug": "setting-up-environment"
+        },
+        {
+          "title": "Your First JavaScript Program",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Writing and running your first JavaScript code",
+          "slug": "first-javascript-program"
+        },
+        {
+          "title": "Variables and Data Types",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Learn about let, const, var and different data types",
+          "slug": "variables-and-data-types"
+        },
+        {
+          "title": "Day 1 Practice Exercises",
+          "duration": "30 min",
+          "type": "exercise",
+          "description": "Hands-on exercises to reinforce what you learned",
+          "slug": "day-1-exercises"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Operators and Control Flow",
+      "duration": "2 hours",
+      "lessons": [
+        {
+          "title": "Arithmetic and Comparison Operators",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Working with mathematical and comparison operations",
+          "slug": "arithmetic-comparison-operators"
+        },
+        {
+          "title": "Logical Operators",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Understanding AND, OR, and NOT operators",
+          "slug": "logical-operators"
+        },
+        {
+          "title": "If Statements and Conditionals",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Making decisions in your code with if/else statements",
+          "slug": "if-statements-conditionals"
+        },
+        {
+          "title": "Switch Statements",
+          "duration": "15 min",
+          "type": "reading",
+          "description": "Alternative way to handle multiple conditions",
+          "slug": "switch-statements"
+        },
+        {
+          "title": "Day 2 Challenge Project",
+          "duration": "30 min",
+          "type": "project",
+          "description": "Build a simple calculator using what you learned",
+          "slug": "day-2-calculator-project"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Loops and Iterations",
+      "duration": "2 hours",
+      "lessons": [
+        {
+          "title": "For Loops",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Understanding and using for loops",
+          "slug": "for-loops"
+        },
+        {
+          "title": "While and Do-While Loops",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Different types of loops and when to use them",
+          "slug": "while-loops"
+        },
+        {
+          "title": "Loop Control: Break and Continue",
+          "duration": "15 min",
+          "type": "reading",
+          "description": "Controlling loop execution flow",
+          "slug": "loop-control"
+        },
+        {
+          "title": "Nested Loops",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Working with loops inside loops",
+          "slug": "nested-loops"
+        },
+        {
+          "title": "Day 3 Practice Project",
+          "duration": "40 min",
+          "type": "project",
+          "description": "Create pattern printing programs and number games",
+          "slug": "day-3-practice-project"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Functions",
+      "duration": "2 hours",
+      "lessons": [
+        {
+          "title": "Function Declarations",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Creating reusable code with functions",
+          "slug": "function-declarations"
+        },
+        {
+          "title": "Function Parameters and Arguments",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Passing data to functions",
+          "slug": "function-parameters"
+        },
+        {
+          "title": "Return Values",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Getting results back from functions",
+          "slug": "return-values"
+        },
+        {
+          "title": "Arrow Functions",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Modern ES6 arrow function syntax",
+          "slug": "arrow-functions"
+        },
+        {
+          "title": "Function Scope and Closures",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Understanding variable scope in functions",
+          "slug": "scope-closures"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Arrays and Objects",
+      "duration": "2 hours",
+      "lessons": [
+        {
+          "title": "Introduction to Arrays",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Working with lists of data",
+          "slug": "intro-to-arrays"
+        },
+        {
+          "title": "Array Methods",
+          "duration": "35 min",
+          "type": "reading",
+          "description": "Push, pop, shift, unshift, slice, splice and more",
+          "slug": "array-methods"
+        },
+        {
+          "title": "Objects and Properties",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "Creating and working with objects",
+          "slug": "objects-properties"
+        },
+        {
+          "title": "Array and Object Iteration",
+          "duration": "20 min",
+          "type": "reading",
+          "description": "Using forEach, map, filter, and reduce",
+          "slug": "iteration-methods"
+        },
+        {
+          "title": "Day 5 Mini Project",
+          "duration": "20 min",
+          "type": "project",
+          "description": "Build a simple todo list manager",
+          "slug": "day-5-todo-project"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "DOM Manipulation",
+      "duration": "2 hours",
+      "lessons": [
+        {
+          "title": "What is the DOM?",
+          "duration": "15 min",
+          "type": "reading",
+          "description": "Understanding the Document Object Model",
+          "slug": "what-is-dom"
+        },
+        {
+          "title": "Selecting Elements",
+          "duration": "25 min",
+          "type": "reading",
+          "description": "querySelector, getElementById, and more",
+          "slug": "selecting-elements"
+        },
+        {
+          "title": "Modifying Elements",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Changing content, styles, and attributes",
+          "slug": "modifying-elements"
+        },
+        {
+          "title": "Event Handling",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Responding to user interactions",
+          "slug": "event-handling"
+        },
+        {
+          "title": "Day 6 Interactive Project",
+          "duration": "20 min",
+          "type": "project",
+          "description": "Create an interactive photo gallery",
+          "slug": "day-6-gallery-project"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Final Project",
+      "duration": "2 hours",
+      "lessons": [
+        {
+          "title": "Project Planning",
+          "duration": "15 min",
+          "type": "reading",
+          "description": "Planning your final project application",
+          "slug": "project-planning"
+        },
+        {
+          "title": "Building the User Interface",
+          "duration": "30 min",
+          "type": "reading",
+          "description": "Creating the HTML and CSS structure",
+          "slug": "building-ui"
+        },
+        {
+          "title": "Implementing JavaScript Logic",
+          "duration": "45 min",
+          "type": "reading",
+          "description": "Adding interactivity and functionality",
+          "slug": "implementing-logic"
+        },
+        {
+          "title": "Testing and Debugging",
+          "duration": "15 min",
+          "type": "reading",
+          "description": "Finding and fixing bugs in your code",
+          "slug": "testing-debugging"
+        },
+        {
+          "title": "Course Wrap-up and Next Steps",
+          "duration": "15 min",
+          "type": "reading",
+          "description": "Congratulations! Where to go from here",
+          "slug": "wrap-up-next-steps"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "icon": "📖",
+      "title": "Written Lessons",
+      "description": "Carefully crafted articles and tutorials"
+    },
+    {
+      "icon": "💻",
+      "title": "Hands-on Projects",
+      "description": "Build real projects to practice your skills"
+    },
+    {
+      "icon": "📝",
+      "title": "Interactive Exercises",
+      "description": "Test your knowledge with coding challenges"
+    },
+    {
+      "icon": "🌍",
+      "title": "Community Driven",
+      "description": "Created and maintained by developers like you"
+    },
+    {
+      "icon": "💯",
+      "title": "100% Free",
+      "description": "No paywalls, no subscriptions, forever free"
+    },
+    {
+      "icon": "🚀",
+      "title": "Self-Paced",
+      "description": "Learn at your own speed, on your schedule"
+    }
+  ]
+}

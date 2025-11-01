@@ -1,0 +1,380 @@
+{
+  "id": "js-7day",
+  "title": "JavaScript Temelleri",
+  "description": "7 günde uygulamalı projelerle JavaScript temellerini öğrenin. Bu kapsamlı kurs sizi JavaScript programlamada sıfırdan kahramana dönüştürecek.",
+  "longDescription": "Bu kurs, JavaScript'i sıfırdan öğrenmek isteyen yeni başlayanlar için tasarlanmıştır. Tüm içerikler topluluk tarafından yazılmış ve tamamen ücretsizdir. Değişkenler, veri tipleri, fonksiyonlar, döngüler ve çok daha fazlası dahil olmak üzere JavaScript'in tüm temel kavramlarını özenle hazırlanmış yazılı dersler ve egzersizler aracılığıyla öğreneceksiniz.",
+  "language": "tr",
+  "duration": 7,
+  "level": "Beginner",
+  "estimatedHours": 14,
+  "lastUpdated": "2025-11-01",
+  "color": "pink",
+  "contributors": [
+    {
+      "name": "Ayşe Yılmaz",
+      "title": "Topluluk Katkıcısı",
+      "bio": "Yeni başlayanlar için eğitim içerikleri oluşturmayı seven tutkulu bir geliştirici.",
+      "avatar": "👩‍💻"
+    },
+    {
+      "name": "Mehmet Kaya",
+      "title": "İçerik Sorumlusu",
+      "bio": "Açık ve özlü yazılı derslerle geliştiricilerin öğrenmesine yardımcı oluyor.",
+      "avatar": "👨‍💻"
+    }
+  ],
+  "community": {
+    "contributorsCount": 12,
+    "githubRepo": "https://github.com/devsteps/js-fundamentals"
+  },
+  "whatYouWillLearn": [
+    "JavaScript sözdizimi ve temel kavramları anlama",
+    "Değişkenler, veri tipleri ve operatörlerle çalışma",
+    "Kontrol akışı: if ifadeleri, döngüler ve switch case",
+    "Fonksiyonlar: tanımlamalar, ifadeler ve ok fonksiyonları",
+    "Dizi ve nesne manipülasyonu",
+    "DOM manipülasyonu ve olay yönetimi",
+    "ES6+ modern JavaScript özellikleri",
+    "İnteraktif web uygulamaları oluşturma"
+  ],
+  "requirements": [
+    "HTML ve CSS'in temel bilgisi",
+    "Modern bir web tarayıcısına sahip bir bilgisayar",
+    "Kurulu metin editörü veya IDE",
+    "Öğrenme isteği!"
+  ],
+  "targetAudience": [
+    "JavaScript öğrenmek isteyen yeni başlayanlar",
+    "Etkileşim eklemek isteyen web tasarımcıları",
+    "Web geliştirmeyle ilgilenen herkes",
+    "Frontend rolleri için hazırlanan öğrenciler"
+  ],
+  "curriculum": [
+    {
+      "day": 1,
+      "title": "JavaScript'e Giriş",
+      "duration": "2 saat",
+      "lessons": [
+        {
+          "title": "JavaScript Nedir?",
+          "duration": "15 dk",
+          "type": "reading",
+          "description": "JavaScript'in ne olduğunu ve web geliştirmede neden önemli olduğunu anlama",
+          "slug": "what-is-javascript"
+        },
+        {
+          "title": "Geliştirme Ortamınızı Kurma",
+          "duration": "20 dk",
+          "type": "reading",
+          "description": "Gerekli araçları yükleme ve geliştirme ortamınızı kurma",
+          "slug": "setting-up-environment"
+        },
+        {
+          "title": "İlk JavaScript Programınız",
+          "duration": "25 dk",
+          "type": "reading",
+          "description": "İlk JavaScript kodunuzu yazma ve çalıştırma",
+          "slug": "first-javascript-program"
+        },
+        {
+          "title": "Değişkenler ve Veri Tipleri",
+          "duration": "30 dk",
+          "type": "reading",
+          "description": "let, const, var ve farklı veri tipleri hakkında bilgi",
+          "slug": "variables-and-data-types"
+        },
+        {
+          "title": "1. Gün Pratik Egzersizleri",
+          "duration": "30 dk",
+          "type": "exercise",
+          "description": "Öğrendiklerinizi pekiştirmek için uygulamalı egzersizler",
+          "slug": "day-1-exercises"
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Operatörler ve Kontrol Akışı",
+      "duration": "2 saat",
+      "lessons": [
+        {
+          "title": "Aritmetik ve Karşılaştırma Operatörleri",
+          "duration": "25 dk",
+          "type": "reading",
+          "description": "Matematiksel ve karşılaştırma işlemleriyle çalışma",
+          "slug": "arithmetic-comparison-operators"
+        },
+        {
+          "title": "Mantıksal Operatörler",
+          "duration": "20 dk",
+          "type": "reading",
+          "description": "AND, OR ve NOT operatörlerini anlama",
+          "slug": "logical-operators"
+        },
+        {
+          "title": "If İfadeleri ve Koşullar",
+          "duration": "30 dk",
+          "type": "reading",
+          "description": "If/else ifadeleriyle kodunuzda karar verme",
+          "slug": "if-statements-conditionals"
+        },
+        {
+          "title": "Switch İfadeleri",
+          "duration": "15 dk",
+          "type": "reading",
+          "description": "Birden fazla koşulu ele almanın alternatif yolu",
+          "slug": "switch-statements"
+        },
+        {
+          "title": "2. Gün Challenge Projesi",
+          "duration": "30 dk",
+          "type": "project",
+          "description": "Öğrendiklerinizi kullanarak basit bir hesap makinesi oluşturma",
+          "slug": "day-2-calculator-project"
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Döngüler ve İterasyonlar",
+      "duration": "2 saat",
+      "lessons": [
+        {
+          "title": "For Döngüleri",
+          "duration": "25 dk",
+          "type": "reading",
+          "description": "For döngülerini anlama ve kullanma",
+          "slug": "for-loops"
+        },
+        {
+          "title": "While ve Do-While Döngüleri",
+          "duration": "20 dk",
+          "type": "reading",
+          "description": "Farklı döngü türleri ve ne zaman kullanılacakları",
+          "slug": "while-loops"
+        },
+        {
+          "title": "Döngü Kontrolü: Break ve Continue",
+          "duration": "15 dk",
+          "type": "reading",
+          "description": "Döngü yürütme akışını kontrol etme",
+          "slug": "loop-control"
+        },
+        {
+          "title": "İç İçe Döngüler",
+          "duration": "20 dk",
+          "type": "reading",
+          "description": "Döngülerin içinde döngülerle çalışma",
+          "slug": "nested-loops"
+        },
+        {
+          "title": "3. Gün Pratik Projesi",
+          "duration": "40 dk",
+          "type": "project",
+          "description": "Desen yazdırma programları ve sayı oyunları oluşturma",
+          "slug": "day-3-practice-project"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Fonksiyonlar",
+      "duration": "2 saat",
+      "lessons": [
+        {
+          "title": "Fonksiyon Tanımlamaları",
+          "duration": "20 dk",
+          "type": "reading",
+          "description": "Fonksiyonlarla yeniden kullanılabilir kod oluşturma",
+          "slug": "function-declarations"
+        },
+        {
+          "title": "Fonksiyon Parametreleri ve Argümanları",
+          "duration": "25 dk",
+          "type": "reading",
+          "description": "Fonksiyonlara veri aktarma",
+          "slug": "function-parameters"
+        },
+        {
+          "title": "Dönüş Değerleri",
+          "duration": "20 dk",
+          "type": "reading",
+          "description": "Fonksiyonlardan sonuç alma",
+          "slug": "return-values"
+        },
+        {
+          "title": "Ok Fonksiyonları",
+          "duration": "25 dk",
+          "type": "reading",
+          "description": "Modern ES6 ok fonksiyon sözdizimi",
+          "slug": "arrow-functions"
+        },
+        {
+          "title": "Fonksiyon Kapsamı ve Closure'lar",
+          "duration": "30 dk",
+          "type": "reading",
+          "description": "Fonksiyonlarda değişken kapsamını anlama",
+          "slug": "scope-closures"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Diziler ve Nesneler",
+      "duration": "2 saat",
+      "lessons": [
+        {
+          "title": "Dizilere Giriş",
+          "duration": "20 dk",
+          "type": "reading",
+          "description": "Veri listeleriyle çalışma",
+          "slug": "intro-to-arrays"
+        },
+        {
+          "title": "Dizi Metodları",
+          "duration": "35 dk",
+          "type": "reading",
+          "description": "Push, pop, shift, unshift, slice, splice ve daha fazlası",
+          "slug": "array-methods"
+        },
+        {
+          "title": "Nesneler ve Özellikler",
+          "duration": "25 dk",
+          "type": "reading",
+          "description": "Nesne oluşturma ve nesnelerle çalışma",
+          "slug": "objects-properties"
+        },
+        {
+          "title": "Dizi ve Nesne İterasyonu",
+          "duration": "20 dk",
+          "type": "reading",
+          "description": "forEach, map, filter ve reduce kullanımı",
+          "slug": "iteration-methods"
+        },
+        {
+          "title": "5. Gün Mini Proje",
+          "duration": "20 dk",
+          "type": "project",
+          "description": "Basit bir yapılacaklar listesi yöneticisi oluşturma",
+          "slug": "day-5-todo-project"
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "title": "DOM Manipülasyonu",
+      "duration": "2 saat",
+      "lessons": [
+        {
+          "title": "DOM Nedir?",
+          "duration": "15 dk",
+          "type": "reading",
+          "description": "Belge Nesne Modeli'ni anlama",
+          "slug": "what-is-dom"
+        },
+        {
+          "title": "Elementleri Seçme",
+          "duration": "25 dk",
+          "type": "reading",
+          "description": "querySelector, getElementById ve daha fazlası",
+          "slug": "selecting-elements"
+        },
+        {
+          "title": "Elementleri Değiştirme",
+          "duration": "30 dk",
+          "type": "reading",
+          "description": "İçerik, stiller ve özellikleri değiştirme",
+          "slug": "modifying-elements"
+        },
+        {
+          "title": "Olay Yönetimi",
+          "duration": "30 dk",
+          "type": "reading",
+          "description": "Kullanıcı etkileşimlerine yanıt verme",
+          "slug": "event-handling"
+        },
+        {
+          "title": "6. Gün İnteraktif Proje",
+          "duration": "20 dk",
+          "type": "project",
+          "description": "İnteraktif bir fotoğraf galerisi oluşturma",
+          "slug": "day-6-gallery-project"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Final Projesi",
+      "duration": "2 saat",
+      "lessons": [
+        {
+          "title": "Proje Planlama",
+          "duration": "15 dk",
+          "type": "reading",
+          "description": "Final proje uygulamanızı planlama",
+          "slug": "project-planning"
+        },
+        {
+          "title": "Kullanıcı Arayüzünü Oluşturma",
+          "duration": "30 dk",
+          "type": "reading",
+          "description": "HTML ve CSS yapısını oluşturma",
+          "slug": "building-ui"
+        },
+        {
+          "title": "JavaScript Mantığını Uygulama",
+          "duration": "45 dk",
+          "type": "reading",
+          "description": "Etkileşim ve işlevsellik ekleme",
+          "slug": "implementing-logic"
+        },
+        {
+          "title": "Test ve Hata Ayıklama",
+          "duration": "15 dk",
+          "type": "reading",
+          "description": "Kodunuzdaki hataları bulma ve düzeltme",
+          "slug": "testing-debugging"
+        },
+        {
+          "title": "Kurs Özeti ve Sonraki Adımlar",
+          "duration": "15 dk",
+          "type": "reading",
+          "description": "Tebrikler! Buradan nereye gidilir",
+          "slug": "wrap-up-next-steps"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "icon": "📖",
+      "title": "Yazılı Dersler",
+      "description": "Özenle hazırlanmış makaleler ve öğreticiler"
+    },
+    {
+      "icon": "💻",
+      "title": "Uygulamalı Projeler",
+      "description": "Becerilerinizi geliştirmek için gerçek projeler oluşturun"
+    },
+    {
+      "icon": "📝",
+      "title": "İnteraktif Egzersizler",
+      "description": "Kodlama zorlukları ile bilginizi test edin"
+    },
+    {
+      "icon": "🌍",
+      "title": "Topluluk Odaklı",
+      "description": "Sizin gibi geliştiriciler tarafından oluşturuldu ve sürdürülüyor"
+    },
+    {
+      "icon": "💯",
+      "title": "%100 Ücretsiz",
+      "description": "Ödeme duvarı yok, abonelik yok, sonsuza dek ücretsiz"
+    },
+    {
+      "icon": "🚀",
+      "title": "Kendi Hızınızda",
+      "description": "Kendi hızınızda, kendi programınızda öğrenin"
+    }
+  ]
+}
