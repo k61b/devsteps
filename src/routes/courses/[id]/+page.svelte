@@ -6,10 +6,20 @@
   import Footer from '$lib/components/Footer.svelte';
   import CourseAccordion from '$lib/components/CourseAccordion.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import {
+    buildBreadcrumbSchema,
+    buildCourseSchema,
+    serializeLdJson,
+    siteUrl,
+    toCanonical
+  } from '$lib/seo';
 
   export let data: PageData;
 
   $: course = data.course;
+
+  const locale = getLocale();
 
   // Calculate total lessons
   $: totalLessons = course.curriculum.reduce((acc, day) => acc + day.lessons.length, 0);
@@ -156,11 +166,50 @@
   };
 
   $: colors = colorMap[course.color] || colorMap.purple;
+
+  $: canonicalUrl = toCanonical(`/courses/${course.id}`);
+  $: metaTitle = m.meta_course_title({ title: course.title });
+  $: metaDescription = m.meta_course_description({
+    title: course.title,
+    duration: course.duration,
+    lessons: totalLessons
+  });
+  $: breadcrumbSchema = buildBreadcrumbSchema([
+    { name: m.course_breadcrumb_home(), url: toCanonical('/') },
+    { name: m.course_breadcrumb_courses(), url: toCanonical('/browse-courses') },
+    { name: course.title, url: canonicalUrl }
+  ]);
+  $: courseSchema = buildCourseSchema({
+    name: course.title,
+    description: course.description,
+    url: canonicalUrl,
+    providerName: m.site_title(),
+    totalLessons,
+    durationDays: course.duration,
+    language: locale
+  });
+  $: lastUpdatedIso = new Date(course.lastUpdated).toISOString();
 </script>
 
 <svelte:head>
-  <title>{course.title} | DevSteps</title>
-  <meta name="description" content={course.description} />
+  <title>{metaTitle}</title>
+  <meta name="description" content={metaDescription} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={metaTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={`${siteUrl}/favicon.svg`} />
+  <meta property="article:modified_time" content={lastUpdatedIso} />
+  <meta name="twitter:title" content={metaTitle} />
+  <meta name="twitter:description" content={metaDescription} />
+  <meta name="twitter:image" content={`${siteUrl}/favicon.svg`} />
+  <script type="application/ld+json">
+    {serializeLdJson(breadcrumbSchema)}
+  </script>
+  <script type="application/ld+json">
+    {serializeLdJson(courseSchema)}
+  </script>
 </svelte:head>
 
 <!-- Hero Section -->

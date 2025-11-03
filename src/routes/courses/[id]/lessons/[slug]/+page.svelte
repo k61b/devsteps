@@ -4,6 +4,13 @@
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import * as m from '$lib/paraglide/messages';
+  import {
+    buildArticleSchema,
+    buildBreadcrumbSchema,
+    serializeLdJson,
+    siteUrl,
+    toCanonical
+  } from '$lib/seo';
   import 'highlight.js/styles/atom-one-dark.css';
 
   export let data: PageData;
@@ -11,6 +18,7 @@
   $: courseId = data.courseId;
   $: metadata = data.metadata;
   $: toc = data.toc || [];
+  $: courseTitle = metadata?.courseTitle ?? courseId;
 
   // Color scheme based on lesson type
   const typeColors: Record<string, any> = {
@@ -61,6 +69,48 @@
   };
 
   $: colors = typeColors[metadata?.type || 'reading'];
+  $: canonicalUrl = toCanonical(`/courses/${courseId}/lessons/${data.slug}`);
+  $: metaTitle = metadata?.title
+    ? m.meta_lesson_title({ title: metadata.title })
+    : m.lesson_default_title();
+  $: resolvedDescription =
+    metadata?.description && metadata.description.length > 0 ? metadata.description : '';
+  $: metaDescription =
+    resolvedDescription.length > 0
+      ? m.meta_lesson_description({
+          title: metadata?.title ?? m.lesson_default_title(),
+          courseTitle,
+          description: resolvedDescription
+        })
+      : m.site_tagline();
+  $: breadcrumbSchema = buildBreadcrumbSchema([
+    { name: m.course_breadcrumb_home(), url: toCanonical('/') },
+    { name: m.course_breadcrumb_courses(), url: toCanonical('/browse-courses') },
+    { name: courseTitle, url: toCanonical(`/courses/${courseId}`) },
+    { name: metadata?.title ?? m.lesson_default_title(), url: canonicalUrl }
+  ]);
+  $: modifiedIso =
+    typeof metadata?.updated === 'string'
+      ? metadata.updated
+      : typeof metadata?.lastUpdated === 'string'
+        ? metadata.lastUpdated
+        : typeof metadata?.date === 'string'
+          ? metadata.date
+          : new Date().toISOString();
+  $: publishedIso =
+    typeof metadata?.published === 'string'
+      ? metadata.published
+      : typeof metadata?.date === 'string'
+        ? metadata.date
+        : modifiedIso;
+  $: articleSchema = buildArticleSchema({
+    title: metadata?.title ?? m.lesson_default_title(),
+    description: resolvedDescription || metaDescription,
+    url: canonicalUrl,
+    dateModified: modifiedIso,
+    datePublished: publishedIso,
+    author: metadata?.author || m.site_title()
+  });
 
   // Add copy buttons to code blocks
   onMount(() => {
@@ -138,8 +188,26 @@
 </script>
 
 <svelte:head>
-  <title>{metadata?.title || m.lesson_default_title()} | DevSteps</title>
-  <meta name="description" content={metadata?.description || ''} />
+  <title>{metaTitle}</title>
+  <meta name="description" content={metaDescription} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={metaTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={`${siteUrl}/favicon.svg`} />
+  <meta property="article:modified_time" content={modifiedIso} />
+  <meta property="article:published_time" content={publishedIso} />
+  <meta property="article:author" content={metadata?.author || m.site_title()} />
+  <meta name="twitter:title" content={metaTitle} />
+  <meta name="twitter:description" content={metaDescription} />
+  <meta name="twitter:image" content={`${siteUrl}/favicon.svg`} />
+  <script type="application/ld+json">
+    {serializeLdJson(breadcrumbSchema)}
+  </script>
+  <script type="application/ld+json">
+    {serializeLdJson(articleSchema)}
+  </script>
 </svelte:head>
 
 <!-- Hero Section -->

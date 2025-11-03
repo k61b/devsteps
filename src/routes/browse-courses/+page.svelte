@@ -4,6 +4,7 @@
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import { courses as allCourses, courseColorClasses } from '$lib/data/courses';
+  import { serializeLdJson, toCanonical } from '$lib/seo';
 
   // Filters state
   let searchQuery = '';
@@ -59,7 +60,30 @@
 
   // Color classes for cards
   const colorClasses = courseColorClasses;
+  const canonicalUrl = toCanonical('/browse-courses');
+  const browseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: m.meta_browse_title(),
+    description: m.meta_browse_description(),
+    url: canonicalUrl
+  };
 </script>
+
+<svelte:head>
+  <title>{m.meta_browse_title()}</title>
+  <meta name="description" content={m.meta_browse_description()} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={m.meta_browse_title()} />
+  <meta property="og:description" content={m.meta_browse_description()} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta name="twitter:title" content={m.meta_browse_title()} />
+  <meta name="twitter:description" content={m.meta_browse_description()} />
+  <script type="application/ld+json">
+    {serializeLdJson(browseSchema)}
+  </script>
+</svelte:head>
 
 <!-- Hero Section with Navigation -->
 <section class="bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">

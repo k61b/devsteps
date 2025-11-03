@@ -5,6 +5,7 @@
   import * as m from '$lib/paraglide/messages';
   import Navigation from '$lib/components/Navigation.svelte';
   import { courses, courseColorClasses } from '$lib/data/courses';
+  import { serializeLdJson, toCanonical } from '$lib/seo';
 
   // Dialog for "Get Started" modal
   const {
@@ -87,7 +88,30 @@
   const featuredCourses = courses.filter((course) => course.featured).slice(0, 3);
 
   const currentYear = new Date().getFullYear();
+  const canonicalUrl = toCanonical('/');
+  const homepageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: m.site_title(),
+    description: m.meta_home_description(),
+    url: canonicalUrl
+  };
 </script>
+
+<svelte:head>
+  <title>{m.meta_home_title()}</title>
+  <meta name="description" content={m.meta_home_description()} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={m.meta_home_title()} />
+  <meta property="og:description" content={m.meta_home_description()} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta name="twitter:title" content={m.meta_home_title()} />
+  <meta name="twitter:description" content={m.meta_home_description()} />
+  <script type="application/ld+json">
+    {serializeLdJson(homepageSchema)}
+  </script>
+</svelte:head>
 
 <!-- Hero Section -->
 <section class="min-h-screen bg-amber-50 relative overflow-hidden">
