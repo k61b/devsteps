@@ -4,6 +4,7 @@ import { marked, Renderer } from 'marked';
 import matter from 'gray-matter';
 import hljs from 'highlight.js';
 import * as m from '$lib/paraglide/messages';
+import type { CourseDetail } from '$lib/types/course-detail';
 
 // Custom renderer for code blocks with syntax highlighting
 const renderer = new Renderer();
@@ -38,24 +39,72 @@ export const GET: RequestHandler = async ({ params, url, fetch }) => {
   const locale = (langParam === 'tr' ? 'tr' : 'en') as 'en' | 'tr';
 
   try {
-    // Try to load language-specific file, fallback to English
-    const contentPath = `/content/courses/${params.courseId}/${locale}/${params.slug}.md`;
-    let rawMarkdown: string;
+    const courseId = params.courseId;
+    const slug = params.slug;
 
-    try {
-      // In production (Cloudflare), fetch from static assets
-      // In dev, this will be served by Vite's dev server
-      const response = await fetch(contentPath);
-      if (!response.ok) throw new Error('File not found');
-      rawMarkdown = await response.text();
-    } catch {
-      // Fallback to English if language-specific file not found
-      const fallbackPath = `/content/courses/${params.courseId}/en/${params.slug}.md`;
-      const response = await fetch(fallbackPath);
-      if (!response.ok) {
-        throw new Error('Lesson not found');
+    const loadCourseDetail = async (lang: 'en' | 'tr'): Promise<CourseDetail | null> => {
+      try {
+        const module = await import(`$lib/data/course-details/${courseId}-${lang}.json`);
+        return module.default as CourseDetail;
+      } catch {
+        return null;
       }
-      rawMarkdown = await response.text();
+    };
+
+    const localeDetail = await loadCourseDetail(locale);
+    const englishDetail = locale === 'en' ? localeDetail : await loadCourseDetail('en');
+
+    const findDayInfo = (detail: CourseDetail | null) => {
+      if (!detail) return null;
+      for (const day of detail.curriculum) {
+        const lessonIndex = day.lessons.findIndex((lesson) => lesson.slug === slug);
+        if (lessonIndex !== -1) {
+          return {
+            day: day.day,
+            lessonIndex: lessonIndex + 1
+          };
+        }
+      }
+      return null;
+    };
+
+    const dayInfo = findDayInfo(localeDetail) ?? findDayInfo(englishDetail);
+
+    const candidatePaths: string[] = [];
+
+    if (dayInfo) {
+      const dayFolder = `day-${String(dayInfo.day).padStart(2, '0')}`;
+      candidatePaths.push(`/content/courses/${courseId}/${locale}/${dayFolder}/${slug}.md`);
+      if (locale !== 'en') {
+        candidatePaths.push(`/content/courses/${courseId}/en/${dayFolder}/${slug}.md`);
+      }
+    }
+
+    // Legacy structure fallback
+    candidatePaths.push(`/content/courses/${courseId}/${locale}/${slug}.md`);
+    if (locale !== 'en') {
+      candidatePaths.push(`/content/courses/${courseId}/en/${slug}.md`);
+    }
+
+    const uniquePaths = Array.from(new Set(candidatePaths));
+
+    let rawMarkdown: string | null = null;
+
+    for (const path of uniquePaths) {
+      try {
+        const response = await fetch(path);
+        if (!response.ok) {
+          continue;
+        }
+        rawMarkdown = await response.text();
+        break;
+      } catch (err) {
+        console.warn(`Could not load lesson from ${path}:`, err);
+      }
+    }
+
+    if (!rawMarkdown) {
+      throw new Error('Lesson not found');
     }
 
     // Parse frontmatter and content (server-side only)
