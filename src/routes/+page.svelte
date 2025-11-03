@@ -4,6 +4,8 @@
   import { flyAndScale } from '$lib/utils';
   import * as m from '$lib/paraglide/messages';
   import Navigation from '$lib/components/Navigation.svelte';
+  import ScrollToTop from '$lib/components/ScrollToTop.svelte';
+  import TestimonialSlider from '$lib/components/TestimonialSlider.svelte';
   import { courses, courseColorClasses } from '$lib/data/courses';
   import { serializeLdJson, toCanonical } from '$lib/seo';
 
@@ -113,18 +115,18 @@
   </script>
 </svelte:head>
 
+<!-- Navigation -->
+<Navigation />
+
 <!-- Hero Section -->
-<section class="min-h-screen bg-amber-50 relative overflow-hidden">
+<section class="min-h-screen bg-amber-50 relative overflow-hidden pt-20">
   <!-- Decorative shapes -->
   <div class="absolute top-20 right-10 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
   <div class="absolute top-40 left-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
   <div class="absolute bottom-20 left-1/2 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
 
-  <!-- Navigation -->
-  <Navigation />
-
   <!-- Hero Content -->
-  <div class="relative z-10 container mx-auto px-6 py-20 md:py-32">
+  <div class="relative z-10 container mx-auto px-6 py-16 md:py-24">
     <div class="max-w-4xl mx-auto text-center">
       <div class="inline-block px-4 py-2 bg-pink-100 border-2 border-pink-300 rounded-full text-pink-700 text-sm font-semibold mb-8">
         {m.hero_badge()}
@@ -157,6 +159,9 @@
           {m.hero_cta_dialog()}
         </button>
       </div>
+
+      <!-- Testimonial Slider -->
+      <TestimonialSlider />
     </div>
   </div>
 </section>
@@ -200,10 +205,10 @@
               {/each}
             </div>
             <a
-              href={`/browse-courses#${course.id}`}
-              class={`mt-auto inline-flex w-max items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition ${courseColorClasses[course.color].button}`}
+              href="/courses/{course.id}"
+              class={`mt-auto inline-flex w-max items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition transform hover:scale-105 ${courseColorClasses[course.color].button}`}
             >
-              {m.landing_courses_card_cta()}
+              Kursa Başla
               <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -270,7 +275,7 @@
         {#if path.featured}
           <div class="flex h-full flex-col p-8 bg-gradient-to-br from-blue-400 to-purple-400 border-2 border-blue-500 rounded-3xl transform scale-105 shadow-xl relative text-white">
             {#if path.badge}
-              <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-300 border-2 border-amber-400 rounded-full text-amber-900 text-sm font-bold">
+              <div class="absolute w-[11rem] -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-amber-300 border-2 border-amber-400 rounded-full text-amber-900 text-sm font-bold">
                 {path.badge}
               </div>
             {/if}
@@ -507,21 +512,21 @@
 
       <div class="space-y-4">
         <div class="flex gap-3 items-start">
-          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-rose-100 text-rose-700 font-semibold">1</span>
+          <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700 font-semibold">1</span>
           <div>
             <p class="font-semibold text-rose-900">{m.dialog_step_1_title()}</p>
             <p class="text-rose-700 text-sm">{m.dialog_step_1_description()}</p>
           </div>
         </div>
         <div class="flex gap-3 items-start">
-          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-rose-100 text-rose-700 font-semibold">2</span>
+          <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700 font-semibold">2</span>
           <div>
             <p class="font-semibold text-rose-900">{m.dialog_step_2_title()}</p>
             <p class="text-rose-700 text-sm">{m.dialog_step_2_description()}</p>
           </div>
         </div>
         <div class="flex gap-3 items-start">
-          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-rose-100 text-rose-700 font-semibold">3</span>
+          <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700 font-semibold">3</span>
           <div>
             <p class="font-semibold text-rose-900">{m.dialog_step_3_title()}</p>
             <p class="text-rose-700 text-sm">{m.dialog_step_3_description()}</p>
@@ -550,6 +555,9 @@
     </div>
   </div>
 {/if}
+
+<!-- Scroll to Top Button -->
+<ScrollToTop />
 
 <style lang="postcss">
   /* Accordion icon rotation */

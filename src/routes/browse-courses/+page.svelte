@@ -3,6 +3,7 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import ScrollToTop from '$lib/components/ScrollToTop.svelte';
   import { courses as allCourses, courseColorClasses } from '$lib/data/courses';
   import { serializeLdJson, toCanonical } from '$lib/seo';
 
@@ -85,15 +86,16 @@
   </script>
 </svelte:head>
 
+<!-- Navigation -->
+<Navigation />
+
 <!-- Hero Section with Navigation -->
-<section class="bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">
+<section class="bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden pt-20">
   <!-- Decorative shapes -->
   <div class="absolute top-20 right-10 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
   <div class="absolute top-40 left-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
 
-  <Navigation />
-
-  <div class="relative z-10 container mx-auto px-6 py-16">
+  <div class="relative z-10 container mx-auto px-6 py-12">
     <div class="text-center max-w-3xl mx-auto">
       <div class="inline-block px-4 py-2 bg-pink-100 border-2 border-pink-300 rounded-full text-pink-700 text-sm font-semibold mb-6">
         {m.paths_badge()}
@@ -288,7 +290,7 @@
                   <!-- CTA Button -->
                   <a
                     href="/courses/{course.id}"
-                    class={`mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition ${colors.button}`}
+                    class={`mt-auto inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition transform hover:scale-105 ${colors.button}`}
                   >
                     {m.browse_course_start()}
                     <span aria-hidden="true" class="transition-transform duration-200 group-hover:translate-x-1">→</span>
@@ -321,6 +323,9 @@
     </div>
   </div>
 </section>
+
+<!-- Scroll to Top Button -->
+<ScrollToTop />
 
 <Footer />
 

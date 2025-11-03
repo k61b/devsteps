@@ -3,6 +3,7 @@
   import type { PageData } from './$types';
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import ScrollToTop from '$lib/components/ScrollToTop.svelte';
   import * as m from '$lib/paraglide/messages';
   import {
     buildArticleSchema,
@@ -210,23 +211,24 @@
   </script>
 </svelte:head>
 
+<!-- Navigation -->
+<Navigation />
+
 <!-- Hero Section -->
-<section class="bg-gradient-to-br {colors.gradient} relative overflow-hidden">
+<section class="bg-gradient-to-br {colors.gradient} relative overflow-hidden pt-20">
   <div class="absolute top-20 right-10 w-64 h-64 bg-white/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
   <div class="absolute top-40 left-10 w-64 h-64 bg-white/40 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-
-  <Navigation />
 
   <div class="relative z-10 container mx-auto px-6 py-8">
     <!-- Breadcrumb -->
     <nav class="mb-6">
-      <ol class="flex items-center gap-2 text-sm">
-        <li><a href="/" class="text-slate-600 hover:text-slate-900 transition">{m.course_breadcrumb_home()}</a></li>
-        <li class="text-slate-400">/</li>
-        <li><a href="/browse-courses" class="text-slate-600 hover:text-slate-900 transition">{m.course_breadcrumb_courses()}</a></li>
-        <li class="text-slate-400">/</li>
-        <li><a href="/courses/{courseId}" class="text-slate-600 hover:text-slate-900 transition">{courseId}</a></li>
-        <li class="text-slate-400">/</li>
+      <ol class="flex items-center gap-2 text-sm bg-white/60 backdrop-blur-sm border-2 border-slate-200 rounded-full px-4 py-2 inline-flex shadow-sm">
+        <li><a href="/" class="text-slate-600 hover:text-slate-900 transition font-medium">{m.course_breadcrumb_home()}</a></li>
+        <li class="text-slate-400">→</li>
+        <li><a href="/browse-courses" class="text-slate-600 hover:text-slate-900 transition font-medium">{m.course_breadcrumb_courses()}</a></li>
+        <li class="text-slate-400">→</li>
+        <li><a href="/courses/{courseId}" class="text-slate-600 hover:text-slate-900 transition font-medium">{courseTitle}</a></li>
+        <li class="text-slate-400">→</li>
         <li class="text-slate-900 font-semibold">{metadata?.title || m.lesson_default_title()}</li>
       </ol>
     </nav>
@@ -444,6 +446,9 @@
     </div>
   </div>
 </section>
+
+<!-- Scroll to Top Button -->
+<ScrollToTop />
 
 <Footer />
 
