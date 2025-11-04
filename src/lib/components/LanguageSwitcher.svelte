@@ -11,7 +11,8 @@
 
   const localeLabelGetters: Partial<Record<Locale, () => string>> = {
     en: m.language_name_english,
-    tr: m.language_name_turkish
+    tr: m.language_name_turkish,
+    es: m.language_name_spanish
   };
 
   const initialLocale = getLocale() as Locale;

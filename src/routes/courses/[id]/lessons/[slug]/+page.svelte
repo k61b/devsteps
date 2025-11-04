@@ -215,7 +215,7 @@
 <Navigation />
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br {colors.gradient} relative overflow-hidden pt-20">
+<section class="bg-gradient-to-br {colors.gradient} relative overflow-hidden pt-24 md:pt-28">
   <div class="absolute top-20 right-10 w-64 h-64 bg-white/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
   <div class="absolute top-40 left-10 w-64 h-64 bg-white/40 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
 
@@ -266,7 +266,7 @@
     <div class="grid lg:grid-cols-12 gap-8">
       <!-- Sidebar - Table of Contents -->
       <aside class="lg:col-span-3">
-        <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 sticky top-6 shadow-sm">
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 sticky top-24 shadow-sm">
           <div class="flex items-center gap-2 mb-4">
             <span class="text-2xl">📑</span>
             <h3 class="font-bold text-slate-900">{m.lesson_sidebar_title()}</h3>

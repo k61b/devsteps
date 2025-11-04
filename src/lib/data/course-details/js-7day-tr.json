@@ -11,20 +11,14 @@
   "color": "pink",
   "contributors": [
     {
-      "name": "Ayşe Yılmaz",
-      "title": "Topluluk Katkıcısı",
-      "bio": "Yeni başlayanlar için eğitim içerikleri oluşturmayı seven tutkulu bir geliştirici.",
-      "avatar": "👩‍💻"
-    },
-    {
-      "name": "Mehmet Kaya",
-      "title": "İçerik Sorumlusu",
-      "bio": "Açık ve özlü yazılı derslerle geliştiricilerin öğrenmesine yardımcı oluyor.",
+      "name": "Kayra Berk Tuncer",
+      "title": "Project Maintainer",
+      "bio": "Bu kursu geliştirerek yeni başlayanların JavaScript öğrenme sürecinden keyif almasını sağlıyor.",
       "avatar": "👨‍💻"
     }
   ],
   "community": {
-    "contributorsCount": 12,
+    "contributorsCount": 1,
     "githubRepo": "https://github.com/devsteps/js-fundamentals"
   },
   "whatYouWillLearn": [
@@ -273,7 +267,7 @@
           "slug": "what-is-dom"
         },
         {
-          "title": "Elementleri Seçme",
+          "title": "Element Seçimi",
           "duration": "25 dk",
           "type": "reading",
           "description": "querySelector, getElementById ve daha fazlası",
@@ -294,7 +288,7 @@
           "slug": "event-handling"
         },
         {
-          "title": "6. Gün İnteraktif Proje",
+          "title": "6. Gün Etkileşimli Proje",
           "duration": "20 dk",
           "type": "project",
           "description": "İnteraktif bir fotoğraf galerisi oluşturma",
@@ -315,14 +309,14 @@
           "slug": "project-planning"
         },
         {
-          "title": "Kullanıcı Arayüzünü Oluşturma",
+          "title": "Kullanıcı Arayüzünü Oluşturmak",
           "duration": "30 dk",
           "type": "reading",
           "description": "HTML ve CSS yapısını oluşturma",
           "slug": "building-ui"
         },
         {
-          "title": "JavaScript Mantığını Uygulama",
+          "title": "JavaScript Mantığını Uygulamak",
           "duration": "45 dk",
           "type": "reading",
           "description": "Etkileşim ve işlevsellik ekleme",
@@ -336,7 +330,7 @@
           "slug": "testing-debugging"
         },
         {
-          "title": "Kurs Özeti ve Sonraki Adımlar",
+          "title": "Kurs Kapanışı ve Sonraki Adımlar",
           "duration": "15 dk",
           "type": "reading",
           "description": "Tebrikler! Buradan nereye gidilir",

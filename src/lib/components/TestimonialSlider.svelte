@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { getLocale } from '$lib/paraglide/runtime';
   import { testimonials } from '$lib/data/testimonials';
+  import type { TestimonialLocale } from '$lib/data/testimonials';
 
   let activeIndex = $state(0);
   let autoplayInterval: ReturnType<typeof setInterval>;
@@ -57,7 +58,10 @@
   }
 
   const currentTestimonial = $derived(testimonials[activeIndex]);
-  const locale = $derived(getLocale());
+  type Locale = TestimonialLocale;
+  const locale = $derived(getLocale() as Locale);
+
+  const getLocalizedText = (value: Record<Locale, string>) => value[locale] ?? value.en;
 </script>
 
 <div
@@ -79,7 +83,7 @@
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
               <p class="text-xl md:text-2xl font-medium text-rose-900 leading-relaxed line-clamp-3">
-                {testimonial.quote[locale]}
+                {getLocalizedText(testimonial.quote)}
               </p>
             </div>
 
@@ -88,7 +92,7 @@
               <div class="text-4xl">{testimonial.avatar}</div>
               <div class="flex-1">
                 <p class="font-bold text-rose-900">{testimonial.name}</p>
-                <p class="text-sm text-rose-700">{testimonial.role[locale]}</p>
+                <p class="text-sm text-rose-700">{getLocalizedText(testimonial.role)}</p>
               </div>
 
               <!-- Social Links -->

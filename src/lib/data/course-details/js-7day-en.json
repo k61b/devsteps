@@ -11,20 +11,14 @@
   "color": "pink",
   "contributors": [
     {
-      "name": "Sarah Johnson",
-      "title": "Community Contributor",
-      "bio": "Passionate developer who loves creating educational content for beginners.",
-      "avatar": "👩‍💻"
-    },
-    {
-      "name": "Michael Chen",
-      "title": "Content Maintainer",
-      "bio": "Helping developers learn through clear, concise written tutorials.",
+      "name": "Kayra Berk Tuncer",
+      "title": "Project Maintainer",
+      "bio": "Building and refining this course to help newcomers enjoy learning JavaScript.",
       "avatar": "👨‍💻"
     }
   ],
   "community": {
-    "contributorsCount": 12,
+    "contributorsCount": 1,
     "githubRepo": "https://github.com/devsteps/js-fundamentals"
   },
   "whatYouWillLearn": [

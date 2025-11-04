@@ -21,6 +21,19 @@
   $: course = data.course;
 
   const locale = getLocale();
+  const languageLabels: Partial<Record<string, () => string>> = {
+    en: m.course_language_english,
+    tr: m.course_language_turkish,
+    es: m.course_language_spanish
+  };
+
+  const getLanguageLabel = (lang: string) => {
+    const getter = languageLabels[lang];
+    if (getter) {
+      return getter();
+    }
+    return lang.toUpperCase();
+  };
 
   // Calculate total lessons
   $: totalLessons = course.curriculum.reduce((acc, day) => acc + day.lessons.length, 0);
@@ -217,7 +230,7 @@
 <Navigation />
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-br {colors.gradient} relative overflow-hidden pt-20">
+<section class="bg-gradient-to-br {colors.gradient} relative overflow-hidden pt-24 md:pt-28">
   <!-- Decorative blobs -->
   <div class="absolute top-20 right-10 w-96 h-96 bg-white/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
   <div class="absolute top-40 left-10 w-96 h-96 bg-white/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -247,7 +260,7 @@
               {m.course_duration_days({ count: course.duration })}
             </span>
             <span class="px-3 py-1 bg-white/80 border-2 border-slate-200 rounded-full text-sm font-semibold text-slate-700">
-              {course.language === 'en' ? m.course_language_english() : m.course_language_turkish()}
+              {getLanguageLabel(course.language)}
             </span>
           </div>
 
@@ -282,12 +295,10 @@
               <p class="text-sm text-slate-600">
                 {m.course_contributors_count({ count: course.community.contributorsCount })}
               </p>
-              {#if course.community.githubRepo}
-                <a href={course.community.githubRepo} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-2 text-sm {colors.text} hover:underline">
-                  <span>🔗</span>
-                  {m.course_github_link()}
-                </a>
-              {/if}
+              <a href="https://github.com/k61b/devsteps/tree/main/static/content/courses/{course.id}/{locale}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-2 text-sm {colors.text} hover:underline">
+                <span>🔗</span>
+                {m.course_github_link()}
+              </a>
             </div>
           {/if}
         </div>
@@ -295,7 +306,7 @@
 
       <!-- Sidebar - Course Card -->
       <div class="lg:col-span-1">
-        <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 sticky top-6 shadow-xl">
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 sticky top-24 shadow-xl">
           <div class="text-center mb-6">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 border-2 border-green-300 mb-3">
               <span class="text-2xl">✨</span>
@@ -431,7 +442,7 @@
 
       <!-- Right Column - Features -->
       <div class="lg:col-span-1">
-        <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 sticky top-6">
+        <div class="bg-white border-2 border-slate-200 rounded-2xl p-6 sticky top-24">
           <h2 class="text-xl font-bold text-slate-900 mb-6">{m.course_features_title()}</h2>
           <div class="space-y-4">
             {#each course.features as feature}

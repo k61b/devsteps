@@ -110,6 +110,7 @@
 	"browse_filter_custom": "Custom",
 	"browse_filter_english": "English",
 	"browse_filter_turkish": "Turkish",
+	"browse_filter_spanish": "Spanish",
 	"browse_clear_filters": "Clear all filters",
 	"browse_no_results": "No courses found",
 	"browse_no_results_description": "Try adjusting your filters or search query.",
@@ -124,8 +125,9 @@
 	"course_duration_days": "{count} Days",
 	"course_language_english": "English",
 	"course_language_turkish": "Turkish",
+	"course_language_spanish": "Spanish",
 	"course_contributors_title": "Top Contributors",
-	"course_contributors_count": "{count}+ community members have contributed to this course",
+	"course_contributors_count": "Community contributors: {count}",
 	"course_github_link": "View on GitHub",
 	"course_free_badge": "100% FREE",
 	"course_free_description": "Forever free, no credit card required",
@@ -189,6 +191,7 @@
 	"lesson_status_coming_soon": "Coming soon",
 	"language_name_english": "English",
 	"language_name_turkish": "Türkçe",
+	"language_name_spanish": "Spanish",
 	"error_lesson_not_found": "Lesson not found",
 	"error_course_not_found": "Course not found"
 }

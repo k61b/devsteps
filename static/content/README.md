@@ -9,26 +9,38 @@ static/content/
 └── courses/
     └── [course-id]/
         ├── en/                    # English lessons
-        │   ├── lesson-slug-1.md
-        │   ├── lesson-slug-2.md
-        │   └── lesson-slug-3.md
+        │   ├── day-01/
+        │   │   ├── lesson-slug-1.md
+        │   │   └── lesson-slug-2.md
+        │   ├── day-02/
+        │   │   └── lesson-slug-3.md
+        │   └── day-03/
+        │       └── lesson-slug-4.md
         └── tr/                    # Turkish lessons
-            ├── lesson-slug-1.md
-            ├── lesson-slug-2.md
-            └── lesson-slug-3.md
+            ├── day-01/
+            │   ├── lesson-slug-1.md
+            │   └── lesson-slug-2.md
+            ├── day-02/
+            │   └── lesson-slug-3.md
+            └── day-03/
+                └── lesson-slug-4.md
 ```
 
-**Note:** Lesson files are organized by language code (en, tr, etc.) and stored in the `static/content/courses/` directory so they can be served as static assets.
+**Note:** Lesson files are organized by language code (en, tr, etc.) and grouped by day folders. Each day contains its own set of lessons stored in the `static/content/courses/` directory so they can be served as static assets.
 
 ## ✍️ How to Add a Lesson
 
 ### 1. Create a Markdown File
 
-Create a new `.md` file in the `static/content/courses/[course-id]/[lang]/` directory. Use kebab-case for the filename (e.g., `what-is-javascript.md`).
+Create a new `.md` file in the `static/content/courses/[course-id]/[lang]/day-XX/` directory. Use kebab-case for the filename (e.g., `what-is-javascript.md`).
 
 **Language Codes:**
 - `en` - English
 - `tr` - Turkish (Türkçe)
+
+**Directory Structure Example:**
+- `static/content/courses/js-7day/en/day-01/what-is-javascript.md`
+- `static/content/courses/js-7day/tr/day-01/what-is-javascript.md`
 
 ### 2. Add Frontmatter
 

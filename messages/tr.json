@@ -110,6 +110,7 @@
 	"browse_filter_custom": "Özel",
 	"browse_filter_english": "İngilizce",
 	"browse_filter_turkish": "Türkçe",
+	"browse_filter_spanish": "İspanyolca",
 	"browse_clear_filters": "Tüm filtreleri temizle",
 	"browse_no_results": "Kurs bulunamadı",
 	"browse_no_results_description": "Filtrelerinizi veya arama sorgunuzu ayarlamayı deneyin.",
@@ -124,8 +125,9 @@
 	"course_duration_days": "{count} Gün",
 	"course_language_english": "İngilizce",
 	"course_language_turkish": "Türkçe",
+	"course_language_spanish": "İspanyolca",
 	"course_contributors_title": "En Aktif Katkıda Bulunanlar",
-	"course_contributors_count": "{count}+ topluluk üyesi bu kursa katkıda bulundu",
+	"course_contributors_count": "Topluluk katkıcıları: {count}",
 	"course_github_link": "GitHub'da Görüntüle",
 	"course_free_badge": "%100 ÜCRETSİZ",
 	"course_free_description": "Sonsuza kadar ücretsiz, kredi kartı gerekmez",
@@ -189,6 +191,7 @@
 	"lesson_status_coming_soon": "Çok yakında",
 	"language_name_english": "İngilizce",
 	"language_name_turkish": "Türkçe",
+	"language_name_spanish": "İspanyolca",
 	"error_lesson_not_found": "Ders bulunamadı",
 	"error_course_not_found": "Kurs bulunamadı"
 }

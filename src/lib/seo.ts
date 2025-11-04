@@ -7,7 +7,7 @@ const rawSiteUrl =
 
 export const siteUrl = (rawSiteUrl || DEFAULT_SITE_URL).replace(/\/+$/, '');
 
-export const supportedLocales = ['en', 'tr'] as const;
+export const supportedLocales = ['en', 'tr', 'es'] as const;
 
 export const toCanonical = (path: string) => {
   const normalized = path.startsWith('/') ? path : `/${path}`;

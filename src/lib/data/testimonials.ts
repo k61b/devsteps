@@ -1,14 +1,10 @@
+export type TestimonialLocale = 'en' | 'tr' | 'es';
+
 export interface Testimonial {
   id: number;
-  quote: {
-    en: string;
-    tr: string;
-  };
+  quote: Record<TestimonialLocale, string>;
   name: string;
-  role: {
-    en: string;
-    tr: string;
-  };
+  role: Record<TestimonialLocale, string>;
   github?: string;
   linkedin?: string;
   avatar: string;
@@ -19,12 +15,14 @@ export const testimonials: Testimonial[] = [
     id: 1,
     quote: {
       en: "Completed my first React project in 7 days! 🚀",
-      tr: "İlk React projemi 7 günde tamamladım! 🚀"
+      tr: "İlk React projemi 7 günde tamamladım! 🚀",
+      es: "¡Terminé mi primer proyecto de React en 7 días! 🚀"
     },
     name: "Sarah K.",
     role: {
       en: "Frontend Developer",
-      tr: "Frontend Geliştirici"
+      tr: "Frontend Geliştirici",
+      es: "Desarrolladora frontend"
     },
     github: "sarahk",
     linkedin: "sarah-keller",
@@ -34,12 +32,14 @@ export const testimonials: Testimonial[] = [
     id: 2,
     quote: {
       en: "From zero to building APIs in 30 days! 💻",
-      tr: "Sıfırdan 30 günde API geliştirmeye başladım! 💻"
+      tr: "Sıfırdan 30 günde API geliştirmeye başladım! 💻",
+      es: "¡Pasé de cero a crear APIs en 30 días! 💻"
     },
     name: "Ahmet Y.",
     role: {
       en: "Backend Developer",
-      tr: "Backend Geliştirici"
+      tr: "Backend Geliştirici",
+      es: "Desarrollador backend"
     },
     github: "ahmety",
     linkedin: "ahmet-yilmaz",
@@ -49,12 +49,14 @@ export const testimonials: Testimonial[] = [
     id: 3,
     quote: {
       en: "Best decision ever! Now I'm confident in my coding skills 🎯",
-      tr: "En iyi kararlarımdan biriydi! Artık kodlama becerilerime güveniyorum 🎯"
+      tr: "En iyi kararlarımdan biriydi! Artık kodlama becerilerime güveniyorum 🎯",
+      es: "¡La mejor decisión! Ahora confío en mis habilidades de programación 🎯"
     },
     name: "Maria G.",
     role: {
       en: "Full Stack Developer",
-      tr: "Full Stack Geliştirici"
+      tr: "Full Stack Geliştirici",
+      es: "Desarrolladora full stack"
     },
     github: "mariag",
     linkedin: "maria-garcia",
@@ -64,12 +66,14 @@ export const testimonials: Testimonial[] = [
     id: 4,
     quote: {
       en: "The structured learning path made all the difference! ✨",
-      tr: "Yapılandırılmış öğrenme yolu her şeyi değiştirdi! ✨"
+      tr: "Yapılandırılmış öğrenme yolu her şeyi değiştirdi! ✨",
+      es: "¡La ruta de aprendizaje estructurada marcó toda la diferencia! ✨"
     },
     name: "Can M.",
     role: {
       en: "Web Developer",
-      tr: "Web Geliştirici"
+      tr: "Web Geliştirici",
+      es: "Desarrollador web"
     },
     github: "canm",
     linkedin: "can-mert",
@@ -79,12 +83,14 @@ export const testimonials: Testimonial[] = [
     id: 5,
     quote: {
       en: "I built 3 projects and landed my first dev job! 🎉",
-      tr: "3 proje yaptım ve ilk geliştirici işimi buldum! 🎉"
+      tr: "3 proje yaptım ve ilk geliştirici işimi buldum! 🎉",
+      es: "¡Construí 3 proyectos y conseguí mi primer trabajo como desarrolladora! 🎉"
     },
     name: "Emily R.",
     role: {
       en: "Junior Developer",
-      tr: "Junior Geliştirici"
+      tr: "Junior Geliştirici",
+      es: "Desarrolladora junior"
     },
     github: "emilyr",
     linkedin: "emily-roberts",

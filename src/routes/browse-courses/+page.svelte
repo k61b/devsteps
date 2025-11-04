@@ -1,6 +1,5 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
-  import { getLocale } from '$lib/paraglide/runtime';
   import Navigation from '$lib/components/Navigation.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import ScrollToTop from '$lib/components/ScrollToTop.svelte';
@@ -10,7 +9,7 @@
   // Filters state
   let searchQuery = '';
   let selectedDuration: 'all' | 7 | 30 | 'custom' = 'all';
-  let selectedLanguage: 'all' | 'en' | 'tr' = 'all';
+  let selectedLanguage: 'all' | 'en' | 'tr' | 'es' = 'all';
   let selectedTechnology: string = 'all';
 
   // Get unique technologies
@@ -218,6 +217,16 @@
                 />
                 <span class="text-purple-700">{m.browse_filter_turkish()}</span>
               </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="language"
+                  value="es"
+                  bind:group={selectedLanguage}
+                  class="text-purple-500"
+                />
+                <span class="text-purple-700">{m.browse_filter_spanish()}</span>
+              </label>
             </div>
           </div>
 
@@ -242,8 +251,7 @@
         <!-- Results count -->
         <div class="mb-6">
           <p class="text-purple-700 text-lg">
-            {filteredCourses.length}
-            {getLocale() === 'tr' ? 'kurs bulundu' : 'courses found'}
+            {m.browse_results_count({ count: filteredCourses.length })}
           </p>
         </div>
 
